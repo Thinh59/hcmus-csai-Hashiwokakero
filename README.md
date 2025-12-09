@@ -43,6 +43,7 @@ Source/
   ├── solver_backtracking.py# Backtracking algorithm implementation
   ├── solver_brute_force.py # Brute-force algorithm implementation
   ├── utils.py              # Utility functions (print grid, validate, etc.)
+  ├── visualize.py          # Visualize outputs 
   ├── main.py               # Main entry point (Menu & Driver code)
   ├── requirements.txt      # List of dependencies
   └── README.txt            # This file
