@@ -7,8 +7,11 @@ Course: CSC14003 - Introduction to Artificial Intelligence
 
 
 [23122009] - [Bàng Mỹ Linh]
+
 [23122018] - [Lại Nguyễn Hồng Thanh]
+
 [23122019] - [Phan Huỳnh Châu Thịnh]
+
 [23122029] - [Nguyễn Trọng Hòa]
 
 ------------------------------------------------------------------------
