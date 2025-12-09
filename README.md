@@ -22,8 +22,11 @@ Course: CSC14003 - Introduction to Artificial Intelligence
 
 ------------------------------------------------------------------------
 **3. INSTALLATION**
+
 Step 1: Open a terminal/command prompt.
+
 Step 2: Navigate to the 'Source' directory.
+
 Step 3: Install the required dependencies using pip:
 
     pip install -r requirements.txt
@@ -53,6 +56,7 @@ Source/
 
 ------------------------------------------------------------------------
 **5. HOW TO RUN**
+
 Step 1: Navigate to the 'Source' folder in your terminal.
 
 Step 2: Run the main program:
