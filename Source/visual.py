@@ -6,7 +6,6 @@ import ast
 def draw_hashi(grid_data, save_path, draw_bridges=True):
     rows = len(grid_data)
     cols = len(grid_data[0])
-
     fig, ax = plt.subplots(figsize=(8, 8))
     ax.invert_yaxis()
     ax.set_aspect('equal')
@@ -23,21 +22,23 @@ def draw_hashi(grid_data, save_path, draw_bridges=True):
             x, y = c, r
 
             if draw_bridges:
-                if cell in ['-', '=']: 
+                if cell in ['-', '=']:
                     x_start, x_end = x - 0.55, x + 0.55
                     if cell == '-':
                         ax.plot([x_start, x_end], [y, y], color=BRIDGE_COLOR, linewidth=BRIDGE_WIDTH, zorder=5)
                     elif cell == '=':
                         ax.plot([x_start, x_end], [y - DOUBLE_BRIDGE_OFFSET, y - DOUBLE_BRIDGE_OFFSET], color=BRIDGE_COLOR, linewidth=BRIDGE_WIDTH, zorder=5)
                         ax.plot([x_start, x_end], [y + DOUBLE_BRIDGE_OFFSET, y + DOUBLE_BRIDGE_OFFSET], color=BRIDGE_COLOR, linewidth=BRIDGE_WIDTH, zorder=5)
-                elif cell in ['|', '#', '"', 'H']: 
+                
+                elif cell in ['|', '$', '"', 'H', '$']:
                     y_start, y_end = y - 0.55, y + 0.55
                     if cell == '|':
                         ax.plot([x, x], [y_start, y_end], color=BRIDGE_COLOR, linewidth=BRIDGE_WIDTH, zorder=5)
-                    else:
+                    else:  
                         ax.plot([x - DOUBLE_BRIDGE_OFFSET, x - DOUBLE_BRIDGE_OFFSET], [y_start, y_end], color=BRIDGE_COLOR, linewidth=BRIDGE_WIDTH, zorder=5)
                         ax.plot([x + DOUBLE_BRIDGE_OFFSET, x + DOUBLE_BRIDGE_OFFSET], [y_start, y_end], color=BRIDGE_COLOR, linewidth=BRIDGE_WIDTH, zorder=5)
 
+            # Vẽ đảo (islands)
             if cell.isdigit() and cell != "0":
                 circle = patches.Circle((x, y), ISLAND_RADIUS, edgecolor='black', facecolor='white', linewidth=1.5, zorder=10)
                 ax.add_patch(circle)
