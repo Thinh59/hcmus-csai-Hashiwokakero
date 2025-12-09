@@ -1,14 +1,13 @@
-========================================================================
+
 PROJECT 02: HASHIWOKAKERO SOLVER (LOGIC)
 Course: CSC14003 - Introduction to Artificial Intelligence
-========================================================================
 
 1. TEAM MEMBERS
 ------------------------------------------------------------------------
-1. [Student ID] - [Full Name]
-2. [Student ID] - [Full Name]
-3. [Student ID] - [Full Name]
-4. [Student ID] - [Full Name]
+1. [23122009] - [Bàng Mỹ Linh]
+2. [23122018] - [Lại Nguyễn Hồng Thanh]
+3. [23122019] - [Phan Huỳnh Châu Thịnh]
+4. [23122029] - [Nguyễn Trọng Hòa]
 
 
 2. SYSTEM REQUIREMENTS
@@ -36,9 +35,9 @@ Step 3: Install the required dependencies using pip:
 Source/
   ├── Inputs/               # Contains input test cases (.txt)
   ├── Outputs/              # Stores generated result grids and summary logs
-  ├── input_reader.py       # Reads input and parses island data
+  ├── helper_01.py       # Reads input and parses island data
   ├── helper_02.py          # Generates CNF clauses (constraints)
-  ├── solver.py             # PySAT solver wrapper
+  ├── solver_pySAT.py             # PySAT solver wrapper
   ├── solver_astar.py       # A* Search algorithm implementation
   ├── solver_backtracking.py# Backtracking algorithm implementation
   ├── solver_brute_force.py # Brute-force algorithm implementation
@@ -64,10 +63,12 @@ Step 3: A menu will appear with the following options:
     [5] COMPARE ALL:         Runs ALL algorithms sequentially on all inputs to generate a performance report.
     [6] Solve Single File:   Select a specific input file and a specific algorithm to view the result grid immediately.
     [7] Validate Inputs:     Checks if input files are valid logic puzzles.
+    [8] Visualize Outputs
     [0] Exit
 
 Note:
 - Results are saved in the 'Outputs' folder.
+- Visualize results are saved in the "visualize" folder
 - A summary JSON file is generated after running batch options (1-5).
 - Timeout is set to 30 seconds per file by default (configurable in main.py).
 
