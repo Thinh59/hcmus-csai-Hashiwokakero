@@ -1,0 +1,376 @@
+[
+  {
+    "input_file": "Inputs\\input-01.txt",
+    "grid_size": "7x7",
+    "islands": 18,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.001585721969604
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-02.txt",
+    "grid_size": "7x7",
+    "islands": 19,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00218892097473
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-03.txt",
+    "grid_size": "7x7",
+    "islands": 20,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.002596378326416
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-04.txt",
+    "grid_size": "7x7",
+    "islands": 19,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00073456764221
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-05.txt",
+    "grid_size": "7x7",
+    "islands": 19,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.002925634384155
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-06.txt",
+    "grid_size": "9x9",
+    "islands": 32,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.001962661743164
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-07.txt",
+    "grid_size": "9x9",
+    "islands": 29,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00399613380432
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-08.txt",
+    "grid_size": "9x9",
+    "islands": 30,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00186276435852
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-09.txt",
+    "grid_size": "9x9",
+    "islands": 30,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.001380443573
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-10.txt",
+    "grid_size": "9x9",
+    "islands": 29,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00130605697632
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-11.txt",
+    "grid_size": "11x11",
+    "islands": 37,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00259613990784
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-12.txt",
+    "grid_size": "11x11",
+    "islands": 39,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.004225969314575
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-13.txt",
+    "grid_size": "11x11",
+    "islands": 41,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00138235092163
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-14.txt",
+    "grid_size": "11x11",
+    "islands": 40,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.001243352890015
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-15.txt",
+    "grid_size": "11x11",
+    "islands": 40,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.004793882369995
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-16.txt",
+    "grid_size": "13x13",
+    "islands": 60,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00500965118408
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-17.txt",
+    "grid_size": "13x13",
+    "islands": 62,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00666880607605
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-18.txt",
+    "grid_size": "13x13",
+    "islands": 56,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.005350828170776
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-19.txt",
+    "grid_size": "13x13",
+    "islands": 60,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00669980049133
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-20.txt",
+    "grid_size": "13x13",
+    "islands": 56,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00415110588074
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-21.txt",
+    "grid_size": "17x17",
+    "islands": 91,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.007251024246216
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-22.txt",
+    "grid_size": "17x17",
+    "islands": 93,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.01166653633118
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-23.txt",
+    "grid_size": "17x17",
+    "islands": 98,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.0059232711792
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-24.txt",
+    "grid_size": "17x17",
+    "islands": 99,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.01221179962158
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-25.txt",
+    "grid_size": "17x17",
+    "islands": 95,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.00955033302307
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-26.txt",
+    "grid_size": "20x20",
+    "islands": 130,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.01702404022217
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-27.txt",
+    "grid_size": "20x20",
+    "islands": 128,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.01241588592529
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-28.txt",
+    "grid_size": "20x20",
+    "islands": 130,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.01176595687866
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-29.txt",
+    "grid_size": "20x20",
+    "islands": 128,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.01243543624878
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-30.txt",
+    "grid_size": "20x20",
+    "islands": 127,
+    "solvers": {
+      "bruteforce": {
+        "success": false,
+        "time": 60.019100189208984
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-31.txt",
+    "grid_size": "3x3",
+    "islands": 3,
+    "solvers": {
+      "bruteforce": {
+        "success": true,
+        "time": 0.00099945068359375
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-32.txt",
+    "grid_size": "3x3",
+    "islands": 4,
+    "solvers": {
+      "bruteforce": {
+        "success": true,
+        "time": 0.0
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-33.txt",
+    "grid_size": "7x3",
+    "islands": 8,
+    "solvers": {
+      "bruteforce": {
+        "success": true,
+        "time": 0.020067453384399414
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-34.txt",
+    "grid_size": "5x5",
+    "islands": 9,
+    "solvers": {
+      "bruteforce": {
+        "success": true,
+        "time": 0.14908695220947266
+      }
+    }
+  }
+]

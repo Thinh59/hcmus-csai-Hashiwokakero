@@ -1,0 +1,376 @@
+[
+  {
+    "input_file": "Inputs\\input-01.txt",
+    "grid_size": "7x7",
+    "islands": 18,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-02.txt",
+    "grid_size": "7x7",
+    "islands": 19,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0009992122650146484
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-03.txt",
+    "grid_size": "7x7",
+    "islands": 20,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0009996891021728516
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-04.txt",
+    "grid_size": "7x7",
+    "islands": 19,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.000997304916381836
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-05.txt",
+    "grid_size": "7x7",
+    "islands": 19,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.000997781753540039
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-06.txt",
+    "grid_size": "9x9",
+    "islands": 32,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0020008087158203125
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-07.txt",
+    "grid_size": "9x9",
+    "islands": 29,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.002003908157348633
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-08.txt",
+    "grid_size": "9x9",
+    "islands": 30,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0010008811950683594
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-09.txt",
+    "grid_size": "9x9",
+    "islands": 30,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.002017498016357422
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-10.txt",
+    "grid_size": "9x9",
+    "islands": 29,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0009975433349609375
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-11.txt",
+    "grid_size": "11x11",
+    "islands": 37,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.00099945068359375
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-12.txt",
+    "grid_size": "11x11",
+    "islands": 39,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0010287761688232422
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-13.txt",
+    "grid_size": "11x11",
+    "islands": 41,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.001001596450805664
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-14.txt",
+    "grid_size": "11x11",
+    "islands": 40,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.001976490020751953
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-15.txt",
+    "grid_size": "11x11",
+    "islands": 40,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0020012855529785156
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-16.txt",
+    "grid_size": "13x13",
+    "islands": 60,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0029854774475097656
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-17.txt",
+    "grid_size": "13x13",
+    "islands": 62,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0019986629486083984
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-18.txt",
+    "grid_size": "13x13",
+    "islands": 56,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.006996870040893555
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-19.txt",
+    "grid_size": "13x13",
+    "islands": 60,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.003000020980834961
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-20.txt",
+    "grid_size": "13x13",
+    "islands": 56,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.01600360870361328
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-21.txt",
+    "grid_size": "17x17",
+    "islands": 91,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.006508827209472656
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-22.txt",
+    "grid_size": "17x17",
+    "islands": 93,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.012021541595458984
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-23.txt",
+    "grid_size": "17x17",
+    "islands": 98,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.007000446319580078
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-24.txt",
+    "grid_size": "17x17",
+    "islands": 99,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.3027229309082031
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-25.txt",
+    "grid_size": "17x17",
+    "islands": 95,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.004999876022338867
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-26.txt",
+    "grid_size": "20x20",
+    "islands": 130,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.5988078117370605
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-27.txt",
+    "grid_size": "20x20",
+    "islands": 128,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.007998228073120117
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-28.txt",
+    "grid_size": "20x20",
+    "islands": 130,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.005956172943115234
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-29.txt",
+    "grid_size": "20x20",
+    "islands": 128,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.006016731262207031
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-30.txt",
+    "grid_size": "20x20",
+    "islands": 127,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.015225410461425781
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-31.txt",
+    "grid_size": "3x3",
+    "islands": 3,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-32.txt",
+    "grid_size": "3x3",
+    "islands": 4,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-33.txt",
+    "grid_size": "7x3",
+    "islands": 8,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0
+      }
+    }
+  },
+  {
+    "input_file": "Inputs\\input-34.txt",
+    "grid_size": "5x5",
+    "islands": 9,
+    "solvers": {
+      "pysat": {
+        "success": true,
+        "time": 0.0009989738464355469
+      }
+    }
+  }
+]
