@@ -36,6 +36,7 @@ Step 3: Install the required dependencies using pip:
 Source/
   ├── Inputs/               # Contains input test cases (.txt)
   ├── Outputs/              # Stores generated result grids and summary logs
+  ├── visualize/            # Stores generated visualize outputs 
   ├── helper_01.py          # Reads input and parses island data
   ├── helper_02.py          # Generates CNF clauses (constraints)
   ├── solver_pySAT.py       # PySAT solver wrapper
