@@ -1,26 +1,27 @@
 
 PROJECT 02: HASHIWOKAKERO SOLVER (LOGIC)
 Course: CSC14003 - Introduction to Artificial Intelligence
+------------------------------------------------------------------------
 
 1. TEAM MEMBERS
+
+
+[23122009] - [Bàng Mỹ Linh]
+[23122018] - [Lại Nguyễn Hồng Thanh]
+[23122019] - [Phan Huỳnh Châu Thịnh]
+[23122029] - [Nguyễn Trọng Hòa]
+
 ------------------------------------------------------------------------
-1. [23122009] - [Bàng Mỹ Linh]
-2. [23122018] - [Lại Nguyễn Hồng Thanh]
-3. [23122019] - [Phan Huỳnh Châu Thịnh]
-4. [23122029] - [Nguyễn Trọng Hòa]
-
-
 2. SYSTEM REQUIREMENTS
-------------------------------------------------------------------------
+
 - Python Version: 3.7 or higher
 - Operating System: Windows, macOS, or Linux
 - Required Libraries:
     + numpy
     + python-sat
 
-
-3. INSTALLATION
 ------------------------------------------------------------------------
+3. INSTALLATION
 Step 1: Open a terminal/command prompt.
 Step 2: Navigate to the 'Source' directory.
 Step 3: Install the required dependencies using pip:
@@ -29,15 +30,15 @@ Step 3: Install the required dependencies using pip:
 
     (Or install manually: pip install numpy python-sat)
 
-
-4. DIRECTORY STRUCTURE
 ------------------------------------------------------------------------
+4. DIRECTORY STRUCTURE
+```text
 Source/
   ├── Inputs/               # Contains input test cases (.txt)
   ├── Outputs/              # Stores generated result grids and summary logs
-  ├── helper_01.py       # Reads input and parses island data
+  ├── helper_01.py          # Reads input and parses island data
   ├── helper_02.py          # Generates CNF clauses (constraints)
-  ├── solver_pySAT.py             # PySAT solver wrapper
+  ├── solver_pySAT.py       # PySAT solver wrapper
   ├── solver_astar.py       # A* Search algorithm implementation
   ├── solver_backtracking.py# Backtracking algorithm implementation
   ├── solver_brute_force.py # Brute-force algorithm implementation
@@ -45,10 +46,11 @@ Source/
   ├── main.py               # Main entry point (Menu & Driver code)
   ├── requirements.txt      # List of dependencies
   └── README.txt            # This file
+```
 
 
-5. HOW TO RUN
 ------------------------------------------------------------------------
+5. HOW TO RUN
 Step 1: Navigate to the 'Source' folder in your terminal.
 Step 2: Run the main program:
 
@@ -72,17 +74,15 @@ Note:
 - A summary JSON file is generated after running batch options (1-5).
 - Timeout is set to 30 seconds per file by default (configurable in main.py).
 
-
-6. ALGORITHMS & IMPLEMENTATION NOTES
 ------------------------------------------------------------------------
+6. ALGORITHMS & IMPLEMENTATION NOTES
 - PySAT: Uses Glucose3 solver. Extremely fast and efficient.
 - A* Search: Uses 'Number of unsatisfied clauses' as heuristic. 
 - Backtracking: Enhanced with Unit Propagation and Most Constrained Variable (MCV) heuristic for pruning.
 - Brute-force: Exhaustive search. Note that it will TIMEOUT on complex grids (e.g., 7x7 dense or larger) due to combinatorial explosion (O(3^E)).
 
-
-7. INPUT/OUTPUT FORMAT
 ------------------------------------------------------------------------
+7. INPUT/OUTPUT FORMAT
 Input (.txt):
 - 0 represents an empty cell.
 - Numbers (1-8) represent islands.
