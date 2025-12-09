@@ -54,6 +54,7 @@ Source/
 ------------------------------------------------------------------------
 **5. HOW TO RUN**
 Step 1: Navigate to the 'Source' folder in your terminal.
+
 Step 2: Run the main program:
 
     python main.py
