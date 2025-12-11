@@ -86,12 +86,7 @@ def solve_with_pysat(cnf_clauses, var_map, islands, grid):
 
         blocking_clause = [-lit for lit in model]
         solver.add_clause(blocking_clause)
-
-    # print(f"Warning: Could not find connected solution in time. Returning disconnected result.")
     elapsed = time.time() - start_time
-    # if best_model_conns:
-    #     output_grid = build_output_grid((len(grid), len(grid[0])), islands, best_model_conns)
-    #     return output_grid, elapsed, True
     
     return None, elapsed, False
 
@@ -146,11 +141,7 @@ def solve_with_astar(cnf_clauses, var_map, islands, grid, timeout=60):
         blocking_clause = [-lit for lit in model]
         current_clauses.append(blocking_clause)
 
-    # print(f"A*: Returning best effort (disconnected) solution due to timeout.")
     elapsed = time.time() - start_time
-    # if best_model_conns:
-    #     output_grid = build_output_grid((len(grid), len(grid[0])), islands, best_model_conns)
-    #     return output_grid, elapsed, True
 
     return None, elapsed, False
 
@@ -205,12 +196,7 @@ def solve_with_backtracking(cnf_clauses, var_map, islands, grid, timeout=60):
         blocking_clause = [-lit for lit in model]
         current_clauses.append(blocking_clause)
 
-    # print(f"Backtracking: Returning best effort (disconnected) solution.")
     elapsed = time.time() - start_time
-    # if best_model_conns:
-    #     output_grid = build_output_grid((len(grid), len(grid[0])), islands, best_model_conns)
-    #     return output_grid, elapsed, True
-
     return None, elapsed, False
 
 

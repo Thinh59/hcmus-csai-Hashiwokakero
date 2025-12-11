@@ -1,54 +1,67 @@
 import heapq
-import sys
 import time
 from pysat.formula import CNF
 
 def count_unsatisfied_clauses(cnf, assignment, var_index_map):
-    unsatisfied_count = 0
+    """Heuristic: số mệnh đề chưa thỏa."""
+    unsatisfied = 0
     for clause in cnf.clauses:
-        is_satisfied = False
+        satisfied = False
+        undecided = False
+
         for lit in clause:
             var = abs(lit)
-            if var not in var_index_map: continue # Safe check
-            
+            if var not in var_index_map:
+                continue
+
             idx = var_index_map[var]
             val = assignment[idx]
+
+            if val is None:
+                undecided = True
+                continue
             
-            # Nếu literal đúng với assignment hiện tại
-            if (lit > 0 and val is True) or (lit < 0 and val is False):
-                is_satisfied = True
+            if (lit > 0 and val) or (lit < 0 and not val):
+                satisfied = True
                 break
-        
-        if not is_satisfied:
-            unsatisfied_count += 1
-            
-    return unsatisfied_count
+
+        if not satisfied:
+            unsatisfied += 1
+    return unsatisfied
+
 
 def unit_propagate(assignment, cnf, var_index_map):
+    """Lan truyền đơn vị. Trả về assignment mới hoặc None nếu conflict."""
     changed = True
     while changed:
         changed = False
+
         for clause in cnf.clauses:
             unassigned = []
-            status = "unresolved"
-            
+            clause_satisfied = False
+
             for lit in clause:
                 var = abs(lit)
-                if var not in var_index_map: continue
-                
+                if var not in var_index_map:
+                    continue
+
                 idx = var_index_map[var]
                 val = assignment[idx]
 
                 if val is None:
                     unassigned.append((var, lit))
                 elif (lit > 0 and val) or (lit < 0 and not val):
-                    status = "satisfied"
+                    clause_satisfied = True
                     break
+
+            if clause_satisfied:
+                continue
+
+            # không literal nào thỏa và không unassigned -> conflict
+            if not unassigned:
+                return None
             
-            if status == "satisfied": continue
-            if not unassigned: return None # Conflict
-            
-            # Unit clause -> Bắt buộc gán
+            # clause đơn -> gán bắt buộc
             if len(unassigned) == 1:
                 var, lit = unassigned[0]
                 idx = var_index_map[var]
@@ -58,88 +71,84 @@ def unit_propagate(assignment, cnf, var_index_map):
                     assignment[idx] = forced_value
                     changed = True
                 elif assignment[idx] != forced_value:
-                    return None # Conflict
-                    
+                    return None  # conflict
     return assignment
 
+
 def is_complete_assignment(assignment):
-    return all(val is not None for val in assignment)
+    return all(v is not None for v in assignment)
 
 
 def expand_state(cnf, assignment, variables, var_index_map):
-    next_states = []
-
-    next_var_idx = -1
-    for i, var in enumerate(variables):
-        # Kiểm tra biên an toàn
-        if i < len(assignment) and assignment[var_index_map[var]] is None:
-            next_var_idx = i
+    """Tìm biến chưa gán đầu tiên, thử True/False."""
+    for var in variables:
+        idx = var_index_map[var]
+        if assignment[idx] is None:
+            next_var = var
             break
-            
-    if next_var_idx == -1:
-        return next_states
+    else:
+        return []  # full assignment
 
-    current_var = variables[next_var_idx]
-    idx = var_index_map[current_var]
+    idx = var_index_map[next_var]
+    children = []
 
-    # Thử gán True và False
-    for val in [True, False]: 
-        try:
-            new_assign = list(assignment) # Copy
-            new_assign[idx] = val
+    for val in [True, False]:
+        new_assign = assignment.copy()
+        new_assign[idx] = val
+        propagated = unit_propagate(new_assign, cnf, var_index_map)
+        if propagated is not None:
+            children.append(propagated)
 
-            propagated = unit_propagate(new_assign, cnf, var_index_map)
-            
-            if propagated is not None:
-                num_assigned = sum(1 for x in propagated if x is not None)
-                next_states.append((num_assigned, propagated))
-        except Exception:
-            continue
+    return children
 
-    return next_states
 
-def solve_cnf_astar(cnf: CNF, time_limit=30):
+def solve_cnf_astar(cnf: CNF, time_limit=60):
     start_time = time.time()
 
-    all_vars = set()
-    for clause in cnf.clauses:
-        for lit in clause:
-            all_vars.add(abs(lit))
-            
-    if not all_vars: return [], {}, []
+    # Tập biến
+    all_vars = {abs(lit) for clause in cnf.clauses for lit in clause}
+    if not all_vars:
+        return [], {}, []
 
+    # Sắp xếp biến theo tần suất xuất hiện
     var_freq = {v: 0 for v in all_vars}
     for clause in cnf.clauses:
-        for lit in clause: var_freq[abs(lit)] += 1
+        for lit in clause:
+            var_freq[abs(lit)] += 1
 
     variables = sorted(all_vars, key=lambda v: -var_freq[v])
-    var_index_map = {var: i for i, var in enumerate(variables)}
-    
+    var_index_map = {v: i for i, v in enumerate(variables)}
+
     n_vars = len(variables)
     assignment = [None] * n_vars
-    
-    # Khởi tạo
-    assignment = unit_propagate(assignment, cnf, var_index_map)
-    if assignment is None: return None
 
+    # Unit propagate ban đầu
+    assignment = unit_propagate(assignment, cnf, var_index_map)
+    if assignment is None:
+        return None  # UNSAT
+
+    # g = số lần mở rộng (ban đầu = 0)
+    g = 0
     h = count_unsatisfied_clauses(cnf, assignment, var_index_map)
-    num_assigned = sum(1 for x in assignment if x is not None)
-    
+    f = g + h
+
+    # Heap entry: (f, g, counter, assignment, h)
+    pq = []
     counter = 0
-    open_list = []
-    heapq.heappush(open_list, (h, -num_assigned, counter, assignment))
+    heapq.heappush(pq, (f, g, counter, assignment, h))
 
     iterations = 0
-    while open_list:
+
+    while pq:
         iterations += 1
-        
-        if iterations % 1000 == 0:
-            if time.time() - start_time > time_limit:
-                return None # Timeout
 
-        h_score, neg_depth, _, current_assign = heapq.heappop(open_list)
+        if time.time() - start_time > time_limit:
+            return None  # Timeout
 
-        if h_score == 0 and is_complete_assignment(current_assign):
+        f_cur, g_cur, _, current_assign, h_cur = heapq.heappop(pq)
+
+        # Nếu tất cả clause thỏa và assignment đầy đủ -> tìm được nghiệm SAT
+        if h_cur == 0 and is_complete_assignment(current_assign):
             model = []
             for var in variables:
                 idx = var_index_map[var]
@@ -147,15 +156,16 @@ def solve_cnf_astar(cnf: CNF, time_limit=30):
                 model.append(var if val else -var)
             return model, var_index_map, variables
 
-        try:
-            next_nodes = expand_state(cnf, current_assign, variables, var_index_map)
-            
-            for new_num, new_assign in next_nodes:
-                new_h = count_unsatisfied_clauses(cnf, new_assign, var_index_map)
-                counter += 1
-                heapq.heappush(open_list, (new_h, -new_num, counter, new_assign))
-                
-        except Exception:
-            continue
+        # Mở rộng trạng thái -> mỗi lần expand = tăng g lên 1 (đúng A*)
+        next_g = g_cur + 1
+
+        # Sinh các trạng thái con
+        children = expand_state(cnf, current_assign, variables, var_index_map)
+
+        for child_assign in children:
+            child_h = count_unsatisfied_clauses(cnf, child_assign, var_index_map)
+            child_f = next_g + child_h
+            counter += 1
+            heapq.heappush(pq, (child_f, next_g, counter, child_assign, child_h))
 
     return None
