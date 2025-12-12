@@ -8,11 +8,11 @@ def read_input(file_path):
             row = [int(x.strip()) for x in line.split(",")]
             grid.append(row)
 
-    islands = []
-    for r in range(len(grid)):
-        for c in range(len(grid[0])):
-            if grid[r][c] != 0:
-                islands.append((r, c, grid[r][c]))
+    islands = identify_island(grid)
+    # for r in range(len(grid)):
+    #     for c in range(len(grid[0])):
+    #         if grid[r][c] != 0:
+    #             islands.append((r, c, grid[r][c]))
 
     return grid, islands
 

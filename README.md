@@ -1,8 +1,7 @@
 
 PROJECT 02: HASHIWOKAKERO SOLVER (LOGIC)
-Course: CSC14003 - Introduction to Artificial Intelligence
 ------------------------------------------------------------------------
-
+Course: CSC14003 - Introduction to Artificial Intelligence
 **1. TEAM MEMBERS**
 
 
@@ -50,10 +49,13 @@ Source/
   ├── solver_backtracking.py# Backtracking algorithm implementation
   ├── solver_brute_force.py # Brute-force algorithm implementation
   ├── utils.py              # Utility functions (print grid, validate, etc.)
-  ├── visualize.py          # Visualize outputs 
+  ├── visual.py          # Visualize outputs 
   ├── main.py               # Main entry point (Menu & Driver code)
   ├── requirements.txt      # List of dependencies
   └── README.txt            # This file
+Docs/
+  ├── Report.pdf/           # Report
+  ├── Ref_01_...            # References: Ref_01, Ref_02, Ref_03, Ref_04, Ref_05
 ```
 
 
